@@ -1,6 +1,6 @@
 import unittest
 import music21
-from src.chord import guitar_chord_builder
+from src.data.chord import guitar_chord_builder
 from common.guitar import guitar
 
 

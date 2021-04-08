@@ -1,7 +1,7 @@
 import music21
-from tools import tree
+from src.tools import tree
 from common.guitar import guitar
-from src.defaults import syn_notes
+from src.data.defaults import syn_notes
 
 
 class GuitarChord:

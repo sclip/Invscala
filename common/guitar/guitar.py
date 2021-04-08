@@ -1,11 +1,9 @@
-from src.defaults import default
-from src.defaults import syn_notes
-from src.defaults import chord_shapes as chs
+from src.data.defaults import syn_notes, chord_shapes as chs, default
 import eel
 from common.guitar import guitar_string
 from common.html_builder import build_helper
-from src.chord import chord_fixer
-from tools import list_methods
+from src.data.chord import chord_fixer
+from src.tools import list_methods
 
 
 class Guitar:

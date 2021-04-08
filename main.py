@@ -1,16 +1,8 @@
-from gui import gui
-from src.note import note
-from src.chord import chord
-from src.defaults import chord_types, default
-from src.defaults import notes
-from src.defaults import octave
-from src.defaults import syn_notes
-from src.defaults import chords
-from src.defaults import chord_shapes
+from src.gui import gui, setup
+from src.data.note import note
+from src.data.chord import chord
+from src.data.defaults import syn_notes, octave, chord_types, notes, chord_shapes, default, chords
 from src import folder_creator
-from gui import setup
-from common.guitar import adapter
-import eel
 
 
 def setup_gui():
@@ -44,7 +36,7 @@ def setup_data():
 
 
 def setup_plugins(priority):
-    if priority == "abc":
+    if priority == "abc":  # Todo
         modules_to_import = []  # json
         modules = map(__import__, modules_to_import)
         # modules.init()
@@ -55,7 +47,7 @@ def setup_common():
 
 
 if __name__ == '__main__':
-    # setup_plugins("High Priority")
+    # setup_plugins("High Priority")  # Todo
     folder_creator.init()
     setup_default()
     setup_data()

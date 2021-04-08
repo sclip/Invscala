@@ -30,4 +30,4 @@ if __name__ == '__main__':
     # This part is for testing
     s = music21.stream.Stream()
     s.append(music21.note.Note("A4"))
-    MIDI.write(s, backup_path="../../data/MIDI")
+    MIDI.write(s, backup_path="../../../data/MIDI")

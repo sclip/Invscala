@@ -1,7 +1,7 @@
 import eel
 
 
-def init(path="gui/gui_path.txt", gui_path=None):
+def init(path="src/gui/gui_path.txt", gui_path=None):
     if gui_path is None:
         with open(path, "r") as text:
             gui_path = text.read()
@@ -10,4 +10,4 @@ def init(path="gui/gui_path.txt", gui_path=None):
 
 
 if __name__ == "__main__":
-    init(gui_path="/web/")
+    init(gui_path="web/")

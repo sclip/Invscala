@@ -1,9 +1,7 @@
 import unittest
 import chord
 import music21
-from src.defaults import chords
-from src.defaults import syn_notes
-
+from src.data.defaults import syn_notes, chords
 
 chord_builder_dummy = chord.ChordBuilder
 cbd = chord_builder_dummy

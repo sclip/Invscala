@@ -1,8 +1,7 @@
 import music21
 import eel
 from common.guitar import guitar
-from src.chord import chord
-from src.chord import guitar_chord_builder
+from src.data.chord import guitar_chord_builder, chord
 
 
 def convert_id_to_note(id_):

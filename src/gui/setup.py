@@ -1,5 +1,5 @@
 import eel
-from gui.elems import static_build
+from src.gui.elems import static_build
 from common.guitar import guitar
 
 

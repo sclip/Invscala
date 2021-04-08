@@ -1,5 +1,5 @@
 from abc import ABC
-from src.instrument import instrument
+from src.data.instrument import instrument
 
 
 class Guitar(instrument.Instrument, ABC):

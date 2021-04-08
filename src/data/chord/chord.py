@@ -1,7 +1,5 @@
 import music21
-from src.defaults import chord_types
-from src.defaults import chords as chords_list
-from src.defaults import syn_notes
+from src.data.defaults import syn_notes, chord_types, chords as chords_list
 from difflib import SequenceMatcher
 from tools import sentence_splitter
 

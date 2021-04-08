@@ -1,6 +1,5 @@
 import music21
-from src.defaults import syn_notes
-
+from src.data.defaults import syn_notes
 
 syn_notes_ = {
 	"A#": "Bb",

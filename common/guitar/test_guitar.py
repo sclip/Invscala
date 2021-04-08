@@ -1,7 +1,6 @@
 import unittest
 import guitar
-from src.defaults import syn_notes
-
+from src.data.defaults import syn_notes
 
 # while
 my_guitar = guitar.Guitar(testing=True)
