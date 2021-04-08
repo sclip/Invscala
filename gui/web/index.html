@@ -1,0 +1,320 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Scale Finder</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Specific CSS files -->
+
+  <link rel="stylesheet" href="css/toolbar.css">
+  <link rel="stylesheet" href="css/chord_chart.css">
+  <link rel="stylesheet" href="css/side_menu.css">
+
+  <!-- Javascript imports -->
+  <!-- Eel will raise errors if not running through python -->
+  <script type="text/javascript" src="/eel.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/init.js"></script>
+  <!--<script src="js/main.js"></script>-->
+
+  <meta name="theme-color" content="#343332">
+</head>
+
+<body>
+  <div id="loading_cover">
+    <h3 style="text-align: center;">Loading</h3>
+    <p style="text-align: center;">If this screen does not disappear, it may be because of a bug.</p>
+  </div>
+  <div id="settings" class="popup" style="display: none;">
+    <h1>Settings</h1>
+    <hr>
+    <!-- Settings -->
+    <hr>
+  </div>
+  <div class="context_menu" id="context_menu_chord_selection">
+    <div>button1</div>
+  </div>
+  <div id="res_context_menu">
+    <div id="res_context_menu_header"></div>
+    <div class="res_context_menu_chords">
+      <div class="res_context_menu_button" id="display_chord_btn">
+        Display Chord
+        <div class="res_context_menu_subcategory" id="res_context_menu_display_chords">
+          <div class="res_context_menu_button">
+            Display Lowest
+          </div>
+          <div class="res_context_menu_button">
+            Display Best
+          </div>
+          <div class="res_context_menu_button">
+            Choose
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="toolbar">
+    <div class="toolbar_button" id="toolbar_file_parent">
+      <div class="toolbar_button_name" id="toolbar_file">
+        File
+      </div>
+      <div class="tlb_dropdown">
+        <div class="tlb_dropdown_button" id="tlb_btn_settings">
+          <div class="tlb_dropdown_left">
+            Settings
+          </div>
+          <div class="tlb_spacing"></div>
+          <div class="tlb_dropdown_right">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="menu_bar">
+    <div id="menu_bar_content_padder">
+      <div class="menu_object" id="instrument_selector_div">
+        <select class="dropdown" name="select_instrument" id="instrument_selector_select" onchange="change_instrument_view()">
+          <!-- Automatically add options using python and js
+          <option value="guitar">Guitar</option>
+          <option value="piano">Piano</option>
+          etc
+          -->
+        </select>
+      </div>
+      <div class="menu_object" id="identification_window">
+        <div class="id_window_obj">
+          <p id="id_window_selected_note">C</p>
+        </div>
+        <div class="id_window_obj" id="id_center">
+          <div class="id_window_bar">
+            C Major
+          </div>
+          <hr class="id_hr">
+          <div class="id_window_bar">
+            C E G
+          </div>
+          <hr>
+        </div>
+        <div class="id_window_obj">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="left_menu_bar" class="side_menu">
+    <div class="left_menu_bar_content" id="guitar_left_menu_bar">
+      <div class="flex_container" id="guitar_select_container">
+        <div class="btn_wide" id="guitar_select_fretboard">
+          Fretboard
+        </div>
+        <div class="btn_wide">
+          Tab
+        </div>
+      </div>
+      <hr class="dark_hr">
+
+      <div class="menu_btn_container">
+        <div class="menu_btn"><img src="img/a.png" alt="a"></div>
+        <div class="menu_btn"><img src="img/f.png" alt="f" width="20px", height="20px"></div>
+        <div class="menu_btn"><img src="img/5.png" alt="5"></div>
+        <div class="menu_btn"><img src="img/5_2.png" alt="5" width="20px", height="20px" /></div>
+        <div class="menu_btn"><img src="img/5_r.png" alt="5" width="20px", height="20px" /></div>
+        <div class="menu_btn"></div>
+      </div>
+      <div class="menu_btn_container">
+        <div class="menu_btn"></div>
+        <div class="menu_btn"></div>
+        <div class="menu_btn"></div>
+        <div class="menu_btn"></div>
+        <div class="menu_btn"></div>
+        <div class="menu_btn"></div>
+      </div>
+
+      <hr class="dark_hr">
+
+      <div class="search_select_type">
+        <div class="btn_wide_search_guitar" id="search_select_chord_guitar">
+          Chords
+        </div>
+        <div class="btn_wide_search_guitar" id="search_select_scale_guitar">
+          Scales
+        </div>
+      </div>
+
+      <div class="search_container">
+        <input type="text" class="search" name="data_search" value="" placeholder="Search . . ." autocomplete="off" oninput="on_search_input('data_search')">
+        <div class="search_results_container" id="search_results_guitar_chord" oninput="search('search_results_guitar_chord', 'Chords');">
+
+
+        </div>
+        <div class="search_results_container" id="search_results_guitar_scale">
+
+        </div>
+      </div>
+
+    </div>
+    <div class="left_menu_bar_content" id="piano_left_menu_bar">
+      <p>left menu (piano)</p>
+    </div>
+  </div>
+
+  <!--
+  <div id="right_menu_bar" class="side_menu">
+    <p>right menu</p>
+  </div>
+  -->
+  <!-- Add your site or application content here -->
+
+  <div id="wrapper">
+    <div id="Guitar" class="instrument_view">
+      <div class="instrument" id="fretboard">
+        <div id="string_tuning_container">
+          <div id="string_count_selector_div">
+            <select class="dropdown" name="select_string_count" id="string_count_select">
+
+            </select>
+          </div>
+          <div id="tuning">
+            <div class="string_label" id="e_label">
+              E
+            </div>
+            <div class="string_label">
+              B
+            </div>
+            <div class="string_label">
+              G
+            </div>
+            <div class="string_label">
+              D
+            </div>
+            <div class="string_label">
+              A
+            </div>
+            <div class="string_label">
+              E
+            </div>
+          </div>
+        </div>
+
+        <div id="strings_container">
+          <div id="fret_n">
+            <!-- Automatically generated content -->
+          </div>
+          <div id="strings">
+            <!-- Automatically generated content -->
+
+
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="layer_2_guitar">
+        <!--
+        <div id="guitar_chord_chart">
+          <h2 id=chord_chart_name>C</h2>
+          <table class="chord_chart_table">
+            <thead id="chord_chart_table_head">
+              <th class="hidden_cell"></th>
+              <th class="chort_chart_table_head_cell"><span class="cell_content_head" id="ccE0">x</span></th>
+              <th class="chort_chart_table_head_cell"><span class="cell_content_head" id="ccA0"></span></th>
+              <th class="chort_chart_table_head_cell"><span class="cell_content_head" id="ccD0"></span></th>
+              <th class="chort_chart_table_head_cell"><span class="cell_content_head" id="ccG0">O</span></th>
+              <th class="chort_chart_table_head_cell"><span class="cell_content_head" id="ccB0"></span></th>
+              <th class="chord_chart_label_head_cell"><span class="cell_content_head" id="cce0">0</span></th>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="hidden_cell"></td>
+                <td class="border_cell"></td>
+                <td><span class="cell_content" id="ccE1"></span></td>
+                <td><span class="cell_content" id="ccA1"></span></td>
+                <td><span class="cell_content" id="ccD1"></span></td>
+                <td><span class="cell_content" id="ccG1"></span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="ccB1">O</span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="cce1"></span></td>
+              </tr>
+              <tr>
+                <td class="hidden_cell"></td>
+                <td class="border_cell"></td>
+                <td><span class="cell_content" id="ccE2"></span></td>
+                <td><span class="cell_content" id="ccA2"></span></td>
+                <td><span class="cell_content" id="ccD2">O</span></td>
+                <td><span class="cell_content" id="ccG2"></span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="ccB2"></span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="cce2"></span></td>
+              </tr>
+              <tr>
+                <td class="hidden_cell"></td>
+                <td class="border_cell"></td>
+                <td><span class="cell_content" id="ccE3"></span></td>
+                <td><span class="cell_content" id="ccA3">O</span></td>
+                <td><span class="cell_content" id="ccD3"></span></td>
+                <td><span class="cell_content" id="ccG3"></span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="ccB3"></span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="cce3"></span></td>
+              </tr>
+              <tr>
+                <td class="hidden_cell"></td>
+                <td class="border_cell"></td>
+                <td><span class="cell_content" id="ccE4"></span></td>
+                <td><span class="cell_content" id="ccA4"></span></td>
+                <td><span class="cell_content" id="ccD4"></span></td>
+                <td><span class="cell_content" id="ccG4"></span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="ccB4"></span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="cce4"></span></td>
+              </tr>
+              <tr>
+                <td class="hidden_cell"></td>
+                <td class="border_cell"></td>
+                <td><span class="cell_content" id="ccE5"></span></td>
+                <td><span class="cell_content" id="ccA5"></span></td>
+                <td><span class="cell_content" id="ccD5"></span></td>
+                <td><span class="cell_content" id="ccG5"></span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="ccB5"></span></td>
+                <td class="chord_chart_label_cell"><span class="cell_content" id="cce5"></span></td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+        -->
+        <p>guitar view.</p>
+      </div>
+
+
+    </div>
+    <div id="Piano" class="instrument_view">
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+</body>
+
+</html>

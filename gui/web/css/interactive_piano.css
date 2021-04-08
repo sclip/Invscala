@@ -1,0 +1,127 @@
+
+#interactivePiano {
+  border: 1px solid #EEE;
+  background-color: rgba(73, 68, 73, .9);
+  padding: 5px 5px 5px 11px;
+  opacity: 99%;
+  height: 137px;
+  display: block;
+  overflow-y: hidden;
+}
+.octave {
+  max-width: 500px;
+  display: inline-block;
+}
+.C {
+  width: 40px;
+  height: 135px;
+  margin-left: -6px;
+  background-color: #EFEFEF;
+  opacity: 99%;
+  border: 1px solid #010101;
+  display: inline-block;
+}
+.D {
+  margin-left: -6px;
+  width: 40px;
+  height: 135px;
+  background-color: #EFEFEF;
+  opacity: 99%;
+  border: 1px solid #010101;
+  display: inline-block;
+}
+.E {
+  margin-left: -6px;
+  width: 40px;
+  height: 135px;
+  background-color: #EFEFEF;
+  opacity: 99%;
+  border: 1px solid #010101;
+  display: inline-block;
+}
+.F {
+  margin-left: -6px;
+  width: 40px;
+  height: 135px;
+  background-color: #EFEFEF;
+  opacity: 99%;
+  border: 1px solid #010101;
+  display: inline-block;
+}
+.G {
+  margin-left: -6px;
+  width: 40px;
+  height: 135px;
+  background-color: #EFEFEF;
+  opacity: 99%;
+  border: 1px solid #010101;
+  display: inline-block;
+}
+.A {
+  margin-left: -6px;
+  width: 40px;
+  height: 135px;
+  background-color: #EFEFEF;
+  opacity: 99%;
+  border: 1px solid #010101;
+  display: inline-block;
+}
+.B {
+  margin-left: -6px;
+  width: 40px;
+  height: 135px;
+  background-color: #EFEFEF;
+  opacity: 99%;
+  border: 1px solid #010101;
+  display: inline-block;
+}
+.Csharp {
+  margin-left: -254px;
+  top: 6px;
+  width: 21px;
+  height: 78px;
+  background-color: #020202;
+  opacity: 99%;
+  position: absolute;
+  box-shadow: -1px 1px 5px black;
+}
+.Dsharp {
+  margin-left: 65px;
+  top: 6px;
+  width: 21px;
+  height: 78px;
+  background-color: #020202;
+  opacity: 99%;
+  position: absolute;
+  box-shadow: -1px 1px 5px black;
+}
+.Fsharp {
+  margin-left: 146px;
+  width: 21px;
+  height: 78px;
+  top: 6px;
+  background-color: #020202;
+  opacity: 99%;
+  position: absolute;
+  box-shadow: -1px 1px 5px black;
+}
+.Gsharp {
+  margin-left: 186px;
+  top: 6px;
+  width: 21px;
+  height: 78px;
+  background-color: #020202;
+  opacity: 99%;
+  position: absolute;
+  box-shadow: -1px 1px 5px black;
+}
+.Asharp {
+  margin-left: 227px;
+  top: 6px;
+  width: 21px;
+  height: 78px;
+  background-color: #020202;
+  opacity: 99%;
+  position: absolute;
+  box-shadow: -1px 1px 5px black;
+}

@@ -1,0 +1,787 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/*
+ *
+ * Variables
+ *
+ *
+ *
+ */
+
+:root {
+  --menu_bg: #302d30;
+}
+
+
+html {
+  color: #EEE;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: "Segoe UI", "Arial", sans-serif;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  display: inline;
+  overflow-y: hidden;
+  height: 100%;
+
+  background-color: #343334;
+}
+
+body {
+  height: 100%;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* */
+
+.dark_hr {
+  border-top: 1px solid #555;
+}
+
+.popup {
+  z-index: 50;
+}
+
+#loading_cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: white;
+  color: #222;
+}
+
+.dropdown {
+  background-color: #2c2c2c;
+  border: 1px solid #262626;
+  color: #EEE;
+}
+
+.flex_container {
+  display: flex;
+}
+
+.btn_wide {
+  width: 75px;
+  text-align: center;
+  margin: 1px;
+  padding: 2px;
+  background-color: #423438;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.btn_wide:hover {
+  background-color: #534549;
+}
+
+.context_menu {
+  position: absolute;
+  background-color: #302d30;
+  z-index: 1000;
+  padding: 2px;
+  border: 1px solid #222;
+}
+
+
+/*
+ * Move content below this point to their own files once development
+ * for the relevant content is finished.
+ *
+ *
+ */
+
+
+#menu_bar {
+  min-height: 4em;
+  border-bottom: 1px solid #222;
+  overflow: hidden;
+  padding: 2px;
+  background-color: #302d30;
+  /*width: 100%;*/
+}
+
+#menu_bar_content_padder {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  display: flex;
+  flex-direction: row;
+}
+
+#instrument_selector_select {
+  width: 9em;
+  margin-left: 0.68em;
+  margin-right: 0.5em;
+}
+
+#identification_window {
+  margin-left: 15px;
+  padding: 5px;
+  border: 1px solid #262626;
+  background-color: #222;
+  width: 400px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+}
+
+.id_window_obj {
+  padding: 3px;
+  min-width: 50px;
+  overflow: -moz-hidden-unscrollable;
+}
+
+#id_window_selected_note {
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: 0.8em;
+  right: 0.1em;
+}
+
+.id_hr {
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+#id_center {
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+}
+
+.id_window_bar {
+  padding: 1px;
+  margin: 0px;
+  text-align: center;
+  width: 100%;
+  height: 1em;
+  color: #CCC;
+  font-size: 12px;
+}
+
+
+
+/* */
+
+#settings {
+  z-index: 99;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  width: 60%;
+  border: 1px solid #222;
+  text-align: center;
+  background-color: #333;
+}
+
+/* */
+
+.side_menu {
+  min-width: 5em;
+  width: 160px;
+  /* resize: horizontal; */
+  text-align: center;
+  z-index: 15;
+  overflow-x: hidden;
+  overflow-y: hidden;  /* might want a scroll later, but hide it */
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  position: absolute;
+}
+
+#left_menu_bar {
+  left: 0px;
+  border-right: 1px solid #222;
+  background-color: #302d30;
+  font-size: 14px;
+}
+
+.left_menu_bar_content {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+}
+
+.btn_wide_search_guitar {
+  width: 75px;
+  text-align: center;
+  margin: 1px;
+  padding: 2px;
+  background-color: #423438;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.btn_wide_search_guitar:hover {
+  background-color: #534549;
+}
+
+.btn_wide_search_piano {
+  width: 75px;
+  text-align: center;
+  margin: 1px;
+  padding: 2px;
+  background-color: #423438;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.btn_wide_search_piano:hover {
+  background-color: #534549;
+}
+
+.search_container {
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search {
+  background-color: #413e41;
+  border: 1px solid #413e41;
+  border-radius: 2px;
+  color: #DDD;
+}
+
+.search_results_container {
+  width: 100%;
+  overflow-y: scroll;
+  height: 50vh;
+  margin-top: 1px;
+  background-color: #2d2a2d;
+  scroll-behavior: auto;
+}
+
+.search_select_type {
+  display: flex;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.search_result {
+  border: 1px solid #32292e;
+  border-radius: 2px;
+  background-color: #42393e;
+  height: 20px;
+  max-height: 20px;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  overflow-x: -moz-hidden-unscrollable;
+  overflow-y: visible;
+}
+
+.search_result:hover {
+  background-color: #554c51;
+}
+
+.search_result_dropdown {
+  position: relative;
+  top: 2px;
+  padding: 1px;
+  background-color: #302d30;
+  border-color: #1f1c1f;
+  width: 100%;
+  min-height: 30px;
+  z-index: 49;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.search_result_dropdown_item {
+  width: 99%;
+  padding: 3px;
+  background-color: #423438;
+  border-color: #322428;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  text-align: center;
+}
+
+.search_result_dropdown_item:hover {
+  background-color: #524448;
+}
+
+.menu_btn_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.menu_btn {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #443b40;
+  border: 1px solid #443b40;
+  border-radius: 2px;
+  margin: 2px;
+}
+
+.menu_btn:hover {
+  background-color: #665d62;
+}
+
+/*
+#right_menu_bar {
+  right: 0px;
+  border-left: 1px solid #222;
+}
+*/
+
+
+/*  */
+#wrapper {
+  display: inline-block;
+  position: relative;
+  left: 171px;
+  height: 100%;
+  min-width: 40vh;
+  z-index: 0;
+}
+
+/* */
+
+/* */
+
+.instrument_view {
+  padding: 5px;
+}
+
+.instrument {
+  min-height: 40px;
+}
+
+/* Guitar */
+#guitar_view {
+  display: block;
+}
+
+#guitar_select_container {
+  margin-top: 5px;
+}
+
+#fretboard {
+  display: flex;
+  font-size: 12px;
+}
+
+#fret_n {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  padding-bottom: 2px;
+  margin-left: 4px;
+}
+
+.fret_marker {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 13.9px;
+  text-align: center;
+  color: #EEE;
+}
+
+#string_tuning_container {
+  display: block;
+}
+
+#tuning {
+  width: 25px;
+  padding-left: 4px;
+  padding-right: 10px;
+  display: block;
+}
+
+
+.string_label {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin-top: 10px;
+  border: 1px solid #AAA;
+  border-radius: 20px;
+  padding-top: 2px;
+}
+
+.string_label:hover {
+  background-color: #999;
+}
+
+#strings_container {
+  display: block;
+  max-width: 250vh;
+  color: #333;
+}
+
+#strings {
+  display: block;
+  width: 100%;
+  background-color: silver;
+}
+
+#guitar_nut {
+  width: 2em;
+  height: 200px;
+  background-color: black;
+}
+
+.string {
+  display: flex;
+  height: 34px;
+  width: 100%;
+  text-align: center;
+}
+
+.string_graphic {
+  width: 100%;
+  position: absolute;
+  margin-top: 20px;
+  z-index: 12;
+}
+
+.nut_fret {
+  z-index: 6;
+  text-align: center;
+  padding-left: 7px;
+  padding-right: 14px;
+  padding-top: 6px;
+  padding-bottom: 5px;
+  width: 10px;
+  /*border: 1px solid #EEE;*/
+  border-right: 10px solid #DDD;
+  background-color: #343234;
+  color: #222;
+}
+
+.nut_fret:hover {
+  background-color: #565456;
+  border-right: 10px solid #EEE;
+}
+
+.fret {
+  z-index: 5;
+  text-align: center;
+  margin-right: 5px;
+  padding-left: 8.9px;
+  padding-right: 4px;
+  padding-top: 6px;
+  padding-bottom: 5px;
+  width: 14px;
+  border-left: 1px solid #888;
+  border-right: 1px solid #6a6a6a;
+  background-color: #927c6a;
+  /*border: 1px solid #AAA;
+  border-radius: 15px;*/
+  box-shadow: -1px -1px 1px #6a6a6a;
+}
+
+.fret:hover {
+  background-color: #DDD;
+}
+
+#nut_graphics {
+  position: absolute;
+
+}
+
+
+.nut_fret>.fret_name {
+  width: 100%;
+  height: 100%;
+  color: #EEE;
+}
+
+.fret>.fret_name {
+  width: 100%;
+  height: 100%;
+  color: #222;
+}
+
+
+/* */
+
+.layer_2_guitar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

@@ -1,0 +1,76 @@
+#guitar_chord_chart {
+  width: 200px;
+  color: #222;
+  border-spacing: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 70px;
+  background-color: #EEE;
+  padding-top: 0px;
+  margin-top: 10px;
+}
+
+
+#chord_chart_name {
+  text-align: center;
+  background-color: #EEE;
+  margin-bottom: 0px;
+  width: 200px;
+}
+
+.chord_chart_table {
+  border-spacing: 0px;
+  font-family: monospace;
+  background-color: #EEE;
+  padding-left: 25px;
+  padding-bottom: 10px;
+}
+
+#chord_chart_table_head {
+}
+
+.chort_chart_table_head_cell {
+  border-bottom: 8px solid #222;
+}
+
+tbody {
+  margin-top: -15px;
+}
+
+td {
+  border-right: 1px solid #222;
+  border-bottom: 1px solid #222;
+  min-width: 18px !important;
+  max-width: 18px;
+  height: 32px;
+  border-spacing: 0px;
+}
+
+.hidden_cell {
+  visibility: hidden;
+}
+
+.border_cell {
+  border-left: 1px solid #222;
+}
+
+.chord_chart_label_head_cell {
+  padding-bottom: 9px;
+}
+
+.chord_chart_label_cell {
+  border: 0px;
+  padding-bottom: 2px;
+}
+
+.cell_content {
+  position: relative;
+  left: -27px;
+  z-index: 50;
+}
+
+.cell_content_head {
+  position: relative;
+  left: -9px;
+}

@@ -1,0 +1,9 @@
+{
+  "to_load": [
+    "data/res/config.json",
+    "data/res/syn_notes.json",
+    "data/res/chord_types.json",
+    "data/res/guitar.json",
+    "data/res/chord_shapes.json"
+  ]
+}

@@ -1,0 +1,183 @@
+/*
+
+  Chords Info, shown below the interactive piano/fretboard
+
+*/
+.infoBlock {
+  min-width: 100% - 1px;
+  max-width: 100% - 1px;
+  min-height: 340px;
+  max-height: 340px;
+  border: 1px solid #EEE;
+  background-color: rgba(73, 68, 73, 0.5);
+  overflow-y: hidden;
+}
+.infoBlock>h3 {
+  text-decoration: underline;
+  font-weight: normal;
+  text-align: center;
+}
+.infoBlockTab {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 1px;
+}
+
+
+
+/* Related Information CSS */
+
+.infoLabelHr {
+  margin-top: 35px;
+}
+.scalesInfo {
+  border-right: 1px solid #777;
+  width: 48%;  /* 32.5 */
+  height: 340px;
+  display: inline-block;
+  overflow: hidden;
+
+  font-size: 11px;
+  padding: 8px;
+}
+
+.infoHeader {
+  margin-top: -49px;
+  width: 48%;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+}
+
+.chordsInfo {
+  width: 47.5%;
+  height: 340px;
+  margin-right: 1px;
+  display: inline-block;
+  overflow: hidden;
+  font-size: 11px;
+  padding: 8px;
+
+}
+#info {
+  width: 30.72%;  /* 32.4908 */
+  height: 200px;
+  margin-left: 1px;
+  display: inline-block;
+  overflow: hidden;
+}
+.infoTab {
+  font-size: 11px;
+  padding: 8px;
+  max-width: 99%;
+}
+.infoValues {
+  float: right;
+}
+
+.infoBtn {
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px;
+  min-width: 110px;
+  display: inline-block;
+  margin-top: 2px;
+}
+.infoBtn:hover {
+  cursor: pointer;
+}
+
+
+
+/* Right Bar Stuff */
+.rightSearchBar {
+  background-color: #393647;
+  min-width: 150px;
+  border-left: 1px solid #EEE;
+}
+.selectSearchType {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selectSearchTypeBtn {
+  min-width: 3em;
+  border: 1px solid #EEE;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  text-align: center;
+}
+.selectSearchTypeBtn:hover {
+  cursor: pointer;
+}
+
+
+.chordsSearch {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 1px;
+}
+.scalesSearch {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 1px;
+}
+.searchForm {
+  background-color: rgba(203, 203, 203, 0.1);
+  color: #EEE;
+}
+.searchResultsContainer {
+  height: 100%;
+}
+
+
+#pianoSearchResultsChords {
+  width: 100%;
+  min-height: 50vh;
+  height: 82vh;
+  max-height: 82vh;
+  overflow-y: scroll;
+}
+#pianoSearchResultsScales {
+  width: 100%;
+  overflow-y: scroll;
+  min-height: 50vh;
+  height: 82vh;
+  max-height: 82vh;
+}
+.newResultDiv {
+  border: 1px solid rgba(240, 240, 240, 0.5);
+  background-color: rgba(203, 203, 203, 0.1);
+  height: 30px;
+  width: 90%;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+.newResultDiv:hover {
+    cursor: pointer;
+}
+.newResultDiv>p {
+    margin-top: 6px;
+}
+
+.newResultDivScale {
+  border: 1px solid rgba(240, 240, 240, 0.5);
+  background-color: rgba(203, 203, 203, 0.1);
+  height: 30px;
+  width: 90%;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+.newResultDivScale:hover {
+    cursor: pointer;
+}
+.newResultDivScale>p {
+    margin-top: 6px;
+}

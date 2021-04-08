@@ -1,0 +1,23 @@
+{
+  "Default Highest Fret": 24,
+  "Default Maximum Fret": 36,
+  "Default String Count": 6,
+  "Minimum String Count": 3,
+  "Maximum String Count": 9,
+  "String Names": [
+    "e",
+    "B",
+    "G",
+    "D",
+    "A",
+    "E"
+  ],
+  "String Notes": [
+    "E4",
+    "B3",
+    "G3",
+    "D3",
+    "A2",
+    "E2"
+  ]
+}

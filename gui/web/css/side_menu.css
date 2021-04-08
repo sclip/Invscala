@@ -1,0 +1,41 @@
+#res_context_menu {
+  position: absolute;
+  min-width: 160px;
+  min-height: 30px;
+  left: 100px;
+  background-color: #302d30;
+  z-index: 950;
+  padding: 2px;
+  border: 1px solid #222;
+  text-align: center;
+}
+
+
+.res_context_menu_button {
+  padding: 2px;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  background-color: #302d30;
+  width: 97%;
+  height: 20px;
+  font-size: 12px;
+}
+
+.res_context_menu_button:hover {
+  background-color: #413e41;
+}
+
+#res_context_menu_display_chords {
+  position: absolute;
+  min-width: 160px;
+  min-height: 30px;
+  left: 162px;
+  top: -15px;
+  background-color: #302d30;
+  z-index: 950;
+  padding: 2px;
+  border: 1px solid #222;
+  text-align: center;
+}
