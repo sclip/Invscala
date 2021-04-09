@@ -1,7 +1,7 @@
 from src.data.defaults import syn_notes, chord_shapes as chs, default
 import eel
 from common.guitar import guitar_string
-from common.html_builder import build_helper
+from src.connect.html_builder import build_helper
 from src.data.chord import chord_fixer
 from src.tools import list_methods
 

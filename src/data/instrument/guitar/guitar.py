@@ -1,6 +1,9 @@
-from abc import ABC
 from src.data.instrument import instrument
 
 
-class Guitar(instrument.Instrument, ABC):
-	pass
+class Guitar(instrument.Instrument):
+	def __init__(self, custom_settings=None):
+		pass
+
+	def load(self):
+		pass

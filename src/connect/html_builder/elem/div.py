@@ -1,4 +1,4 @@
-from common.html_builder import element
+from src.connect.html_builder import element
 
 
 class Div(element.Element):

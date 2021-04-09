@@ -7,6 +7,7 @@ _chords = {}  # {major: [...], minor: [...], ...}
 all_chords = []
 
 
+# Todo: why does this exist?
 class ChordBuilder:
 	@staticmethod
 	def generate_major():
@@ -21,6 +22,7 @@ class ChordBuilder:
 		return music21.chord.Chord([0, 3, 6])
 
 
+# Todo: do we need a static class?
 class ChordInterface:
 	@staticmethod
 	def init():  # Generate all chords and add them to the _chords dictionary.
@@ -191,6 +193,7 @@ class ChordInterface:
 
 	@staticmethod
 	def index(index):  # todo: potentially move to its own module, add to_search as param
+		#			   # todo: also make a bit more dynamic, has to work with scales too!
 		to_return = []
 		to_search = tuple(chords_list.chords.get_chords())
 

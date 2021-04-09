@@ -4,6 +4,5 @@ from abc import abstractmethod
 
 class Instrument(ABC):
 	@abstractmethod
-	def my_method(self):
+	def load(self):
 		pass
-	# TODO

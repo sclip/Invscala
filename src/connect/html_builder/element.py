@@ -1,4 +1,4 @@
-from common.html_builder import builder
+from src.connect.html_builder import builder
 
 
 class Element:

@@ -1,6 +1,3 @@
-from common.html_builder.elem.option import *
-
-
 def init():
     guitar_option = Option("guitar", elem_id="select_instrument_guitar", child_of="#instrument_selector_select")
     guitar_option.add_content("Guitar")

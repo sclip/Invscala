@@ -1,4 +1,4 @@
-from common.html_builder.elem import div, option
+from src.connect.html_builder.elem import div, option
 
 
 def build_fret_numbering(frets):
