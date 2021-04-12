@@ -30,7 +30,7 @@ class Search(command.Command):
 			raise SyntaxError  # Todo: Replace with match
 		except SyntaxError:
 			if self._type == "Chords":
-				self._results = searcher.search(self._index, tuple(chords.chords.get_chords()))
+				self._results = searcher.search.search_chords(self._index, tuple(chords.chords.get_chords()))
 			else:
 				raise TypeError(f"{self._type} is not a valid type")
 
