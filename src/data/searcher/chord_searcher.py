@@ -12,10 +12,8 @@ class ChordSearcher(searcher.Searcher):
 	def action(self, item):
 		return ChordInterface.get_chord_name(item)
 
-	def finalize(self, items):
-		no_dupes_to_return = items
-		# [no_dupes_to_return.append(x) for x in items if x not in no_dupes_to_return]
-		return tuple(no_dupes_to_return)  # Todo: implement sorting
+	def finalize(self):
+		pass
 
 
 #####################

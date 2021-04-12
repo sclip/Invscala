@@ -13,7 +13,7 @@ class Searcher:
 
 	Override `run_search_methods` to change the above behavior.
 
-	Override `prepare` to change things to `to_search`
+	Override `prepare` to change things before any logic is run
 
 	Override `finalize` to change what is done right before the results are returned.
 
@@ -36,6 +36,9 @@ class Searcher:
 
 	def __init__(self, *search_methods):
 		self._search_methods = search_methods
+		self.__index = None
+		self.__to_search = []
+		self.__to_return = []
 
 	def search(self, index, to_search) -> tuple:
 		"""
@@ -51,28 +54,25 @@ class Searcher:
 
 		"""
 
-		to_return = []
-		to_search = tuple(to_search)
+		self.__to_return = []
+		self.__to_search = tuple(to_search)
+		self.__index = index
 
-		to_search = self.prepare(to_search)
+		self.prepare()
 
 		# If index is empty then we return everything in to_search
-		if len(index) == 0:
-			try:
-				to_return = [self.action(x) for x in to_search]
-			except TypeError:
-				raise TypeError(f"'{type(to_search)}' object is not iterable, and cannot be searched through.")
+		self.on_empty_search()
 
 		# Other logic
 		self.run_search_methods(
-			index,
-			to_search,
-			to_return
+			self.__index,
+			self.__to_search,
+			self.__to_return
 		)
 
-		to_return = self.finalize(to_return)
+		self.finalize()
 
-		return to_return
+		return tuple(self.__to_return)
 
 	def run_search_methods(self, index, to_search, to_return):
 		# Runs every searching method
@@ -80,11 +80,18 @@ class Searcher:
 			[to_return.append(result) for result in search_method(self, index, to_search, len(to_return))]
 		return to_return
 
+	def on_empty_search(self):
+		if len(self.__index) == 0:
+			try:
+				self.__to_return = [self.action(x) for x in self.__to_search]
+			except TypeError:
+				raise TypeError(f"'{type(self.__to_search)}' object is not iterable, and cannot be searched through.")
+
 	def action(self, item):
 		return item
 
-	def prepare(self, items):
-		return items
+	def prepare(self):
+		pass
 
-	def finalize(self, items) -> tuple:
-		return tuple(sorted(items))
+	def finalize(self):
+		pass
