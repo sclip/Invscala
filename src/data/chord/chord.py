@@ -1,7 +1,7 @@
 import music21
 from src.data.defaults import syn_notes, chord_types, chords as chords_list
 from difflib import SequenceMatcher
-from tools import sentence_splitter
+from src.tools import sentence_splitter
 
 _chords = {}  # {major: [...], minor: [...], ...}
 all_chords = []
@@ -193,7 +193,7 @@ class ChordInterface:
 
 	@staticmethod
 	def index(index):  # todo: potentially move to its own module, add to_search as param
-		#			   # todo: also make a bit more dynamic, has to work with scales too!
+		# # 		   # todo: also make a bit more dynamic, has to work with scales too!
 		to_return = []
 		to_search = tuple(chords_list.chords.get_chords())
 

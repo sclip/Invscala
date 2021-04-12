@@ -1,6 +1,6 @@
 import eel
 from src.gui.elems import static_build
-from common.guitar import guitar
+from src.data.instrument.guitar import guitar
 
 
 @eel.expose
@@ -11,7 +11,7 @@ def setup():
 
 
 def load():
-    guitar.guitar.load()
+    guitar.guitar.init()
 
 
 @eel.expose

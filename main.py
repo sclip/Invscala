@@ -3,6 +3,7 @@ from src.data.note import note
 from src.data.chord import chord
 from src.data.defaults import syn_notes, octave, chord_types, notes, chord_shapes, default, chords
 from src import folder_creator
+from src import connect
 
 
 def setup_gui():

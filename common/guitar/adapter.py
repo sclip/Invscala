@@ -49,7 +49,7 @@ def get_info(obj, type_):
     pass
 
 
-@eel.expose
+# @eel.expose
 def search(index, type_):
     if type_ == "Chords":
         for obj in sorted(chord.ChordInterface.index(index)):
