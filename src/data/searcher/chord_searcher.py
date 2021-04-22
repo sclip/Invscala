@@ -13,7 +13,7 @@ class ChordSearcher(searcher.Searcher):
 		return ChordInterface.get_chord_name(item)
 
 	def finalize(self):
-		pass
+		self._to_return = list(set(self._to_return))  # Remove duplicates
 
 
 #####################

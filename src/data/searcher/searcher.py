@@ -36,9 +36,9 @@ class Searcher:
 
 	def __init__(self, *search_methods):
 		self._search_methods = search_methods
-		self.__index = None
-		self.__to_search = []
-		self.__to_return = []
+		self._index = None
+		self._to_search = []
+		self._to_return = []
 
 	def search(self, index, to_search) -> tuple:
 		"""
@@ -54,9 +54,9 @@ class Searcher:
 
 		"""
 
-		self.__to_return = []
-		self.__to_search = tuple(to_search)
-		self.__index = index
+		self._to_return = []
+		self._to_search = tuple(to_search)
+		self._index = index
 
 		self.prepare()
 
@@ -65,14 +65,14 @@ class Searcher:
 
 		# Other logic
 		self.run_search_methods(
-			self.__index,
-			self.__to_search,
-			self.__to_return
+			self._index,
+			self._to_search,
+			self._to_return
 		)
 
 		self.finalize()
 
-		return tuple(self.__to_return)
+		return tuple(self._to_return)
 
 	def run_search_methods(self, index, to_search, to_return):
 		# Runs every searching method
@@ -81,11 +81,11 @@ class Searcher:
 		return to_return
 
 	def on_empty_search(self):
-		if len(self.__index) == 0:
+		if len(self._index) == 0:
 			try:
-				self.__to_return = [self.action(x) for x in self.__to_search]
+				self._to_return = [self.action(x) for x in self._to_search]
 			except TypeError:
-				raise TypeError(f"'{type(self.__to_search)}' object is not iterable, and cannot be searched through.")
+				raise TypeError(f"'{type(self._to_search)}' object is not iterable, and cannot be searched through.")
 
 	def action(self, item):
 		return item
